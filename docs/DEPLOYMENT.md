@@ -22,7 +22,7 @@ Create a `.env.local` file (or set environment variables in your hosting platfor
 
 ```env
 # MongoDB Connection
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/quant-finance-hub
+MONGODB_URI=""
 
 # NextAuth Configuration
 NEXTAUTH_SECRET=your-secret-key-here-generate-with-openssl-rand-base64-32
