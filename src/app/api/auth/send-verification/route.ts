@@ -5,6 +5,9 @@ import User from "@/models/User";
 import { getCurrentUser } from "@/lib/auth";
 import crypto from "crypto";
 
+// Force dynamic rendering to prevent build-time evaluation
+export const dynamic = "force-dynamic";
+
 export async function POST(request: Request) {
   try {
     const user = await getCurrentUser();
