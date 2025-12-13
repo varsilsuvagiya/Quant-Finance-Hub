@@ -5,6 +5,9 @@ import TradingStrategy from "@/models/TradingStrategy";
 import { getCurrentUser } from "@/lib/auth";
 import { z } from "zod";
 
+// Force dynamic rendering to prevent build-time evaluation
+export const dynamic = "force-dynamic";
+
 const copySchema = z.object({
   strategyId: z.string().min(1),
 });

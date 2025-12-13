@@ -4,6 +4,9 @@ import { connectDB } from "@/lib/db";
 import TradingStrategy from "@/models/TradingStrategy";
 import { getCurrentUser } from "@/lib/auth";
 
+// Force dynamic rendering to prevent build-time evaluation
+export const dynamic = "force-dynamic";
+
 export async function GET(request: Request) {
   try {
     const user = await getCurrentUser();

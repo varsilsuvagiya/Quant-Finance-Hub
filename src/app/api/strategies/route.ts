@@ -10,6 +10,9 @@ import TradingStrategy from "@/models/TradingStrategy";
 import { getCurrentUser } from "@/lib/auth";
 import { z } from "zod";
 
+// Force dynamic rendering to prevent build-time evaluation
+export const dynamic = "force-dynamic";
+
 /**
  * Rate limiting configuration
  * In-memory rate limiting (suitable for demo and serverless environments like Vercel)

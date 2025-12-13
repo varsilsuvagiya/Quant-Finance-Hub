@@ -9,6 +9,9 @@ import Groq from "groq-sdk";
 import { getCurrentUser } from "@/lib/auth";
 import { z } from "zod";
 
+// Force dynamic rendering to prevent build-time evaluation
+export const dynamic = "force-dynamic";
+
 // Initialize Groq client
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,

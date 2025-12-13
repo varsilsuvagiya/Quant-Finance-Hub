@@ -5,6 +5,9 @@ import TradingStrategy from "@/models/TradingStrategy";
 import { getCurrentUser } from "@/lib/auth";
 import { z } from "zod";
 
+// Force dynamic rendering to prevent build-time evaluation
+export const dynamic = "force-dynamic";
+
 const useTemplateSchema = z.object({
   templateId: z.string().min(1),
   name: z.string().min(3).max(100).optional(),

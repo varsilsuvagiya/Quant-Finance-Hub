@@ -5,6 +5,9 @@ import TradingStrategy from "@/models/TradingStrategy";
 import { getSessionUser } from "@/lib/auth";
 import { z } from "zod";
 
+// Force dynamic rendering to prevent build-time evaluation
+export const dynamic = "force-dynamic";
+
 const ratingSchema = z.object({
   rating: z.number().min(1).max(5),
 });

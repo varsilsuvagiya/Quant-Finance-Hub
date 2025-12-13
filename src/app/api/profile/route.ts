@@ -10,6 +10,9 @@ import User from "@/models/User";
 import { getCurrentUser } from "@/lib/auth";
 import { z } from "zod";
 
+// Force dynamic rendering to prevent build-time evaluation
+export const dynamic = "force-dynamic";
+
 // Validation schema for profile updates
 const profileUpdateSchema = z.object({
   name: z.string().min(1).max(100).trim().optional(),
@@ -48,10 +51,7 @@ export async function PUT(request: Request) {
     // Find user by email (from session)
     const dbUser = await User.findOne({ email: user.email });
     if (!dbUser) {
-      return NextResponse.json(
-        { error: "User not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     // Update user fields
@@ -80,4 +80,3 @@ export async function PUT(request: Request) {
     );
   }
 }
-
